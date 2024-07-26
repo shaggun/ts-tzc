@@ -29,6 +29,7 @@ enum TimeZones {
   UTC_PLUS_12,
 }
 
+
 const formatTime = (date: Date, offset: number): string => {
   const utc = date.getTime() + date.getTimezoneOffset() * 60000;
   const adjustedDate = new Date(utc + 3600000 * offset);
@@ -56,7 +57,7 @@ const App: React.FC = () => {
   const timeZoneTime = formatTime(currentTime, selectedOffset);
 
   const handleTimeZoneChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedOffset(parseInt(event.target.value) as TimeZones)
+    setSelectedOffset(parseInt(event.target.value) as TimeZones);
   }
 
   return (
