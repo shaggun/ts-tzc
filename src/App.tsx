@@ -52,7 +52,7 @@ const App: React.FC = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const localTime = formatTime(currentTime, -6);
+  const localTime = formatTime(currentTime, -currentTime.getTimezoneOffset() / 60);
   const timeZoneTime = formatTime(currentTime, selectedOffset);
 
   const handleTimeZoneChange = (event: ChangeEvent<HTMLSelectElement>) => {
