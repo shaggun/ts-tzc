@@ -5,14 +5,15 @@ interface TimeDisplayProps {
   time: string;
   timezone: TimeZones;
   label?: string;
+  className?: string;
 }
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ time, timezone, label = '' }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({ time, timezone, label = '', className = '' }) => {
 
   const formattedTimeZone = `UTC${timezone >= 0 ? `+${timezone}` : timezone}`;
 
   return (
-    <div className="time-display">
+    <div className={className}>
       <p>{`${time} ${formattedTimeZone} ${label}`}</p>
     </div>
   );
