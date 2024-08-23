@@ -13,7 +13,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ time, timezone, label = '' })
 
   return (
     <div className="time-display">
-      <p>{`Time in ${formattedTimeZone}: ${time} ${label}`}</p>
+      <p>{`${time} ${formattedTimeZone} ${label}`}</p>
     </div>
   );
 };
